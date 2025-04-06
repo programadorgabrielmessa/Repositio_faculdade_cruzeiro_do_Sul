@@ -1,0 +1,138 @@
+/* Reset básico e estilos do corpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli, sans-serif'; /* Fonte mais comum */
+    background-color: #f0f0f0; /* Fundo cinza claro para contraste */
+    color: #333;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #932020; /* Vermelho escuro */
+    color: white;
+    padding: 15px 15px 15px 15px; /* Mais padding no topo */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+header h1 {
+    margin-bottom: 20px;
+    font-weight: normal; /* Título um pouco mais leve */
+}
+
+/* Container para Input e Botão Adicionar */
+.input-area {
+    display: flex;
+    align-items: center; /* Alinha input e botão verticalmente */
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px 5px 5px 15px; /* Padding interno (mais à esquerda) */
+    max-width: 400px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
+
+/* Campo de Input da Tarefa */
+#tarefa {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    border: none;
+    outline: none; /* Remove a borda de foco */
+    padding: 10px 5px; /* Padding vertical e pouco horizontal */
+    font-size: 1rem;
+    color: #555; /* Cor do texto do input */
+}
+
+#tarefa::placeholder {
+    color: #aaa; /* Cor do placeholder */
+}
+
+/* Botão Adicionar (Ícone) */
+#btn {
+    background: none;
+    border: none;
+    color: #8B0000; /* Cor do ícone igual ao header */
+    font-size: 1.8rem; /* Tamanho do ícone de mais */
+    cursor: pointer;
+    padding: 5px 10px; /* Espaçamento ao redor do ícone */
+    transition: color 0.2s ease; /* Transição suave para hover */
+}
+
+#btn:hover {
+    color: #610000; /* Cor um pouco mais escura no hover */
+}
+
+/* Lista de Tarefas */
+#lista {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+    max-width: 600px; /* Mesma largura do input para alinhar */
+    margin: 20px auto; /* Espaçamento acima/abaixo e centraliza */
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Itens da Lista (Tarefas Individuais) */
+#lista li {
+    display: flex;
+    align-items: center; /* Alinha ícones e texto verticalmente */
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0; /* Linha separadora sutil */
+    transition: background-color 0.2s ease; /* Efeito suave ao passar o mouse */
+}
+
+#lista li:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+#lista li:hover {
+    background-color: #f9f9f9; /* Leve destaque no hover */
+}
+
+/* Ícone de Check */
+#lista li .check {
+    color: #555; /* Cor padrão do check */
+    margin-right: 12px; /* Espaço entre check e texto */
+    font-size: 1.1rem;
+    cursor: pointer; /* Indica que é clicável (se houver funcionalidade) */
+    transition: color 0.2s ease;
+}
+
+#lista li .check:hover {
+    color: #28a745; /* Verde no hover (sugestão) */
+}
+
+/* Texto da Tarefa */
+#lista li span {
+    flex-grow: 1; /* Ocupa o espaço entre os ícones */
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Ícone de Lixeira (Remover) */
+#lista li .close { /* Usa a classe definida no JS */
+    color: #dc3545; /* Vermelho para delete */
+    margin-left: 12px; /* Espaço entre texto e lixeira */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#lista li .close:hover {
+    color: #a0212e; /* Vermelho mais escuro no hover */
+}
+
+/* Estilo para tarefa completada (Opcional - requer JS para adicionar/remover a classe 'completed') */
+#lista li.completed span {
+    text-decoration: line-through;
+    color: #888; /* Cor mais clara para texto riscado */
+}
+
+#lista li.completed .check {
+    color: #28a745; /* Verde para indicar concluído */
+}
